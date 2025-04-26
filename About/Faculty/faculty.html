@@ -50,20 +50,35 @@
     }
     .faculty-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
     .faculty-card {
       background-color: white;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: transform 0.3s;
+      gap: 1.5rem;
     }
     .faculty-card:hover {
       transform: translateY(-5px);
     }
-    .faculty-card h3 {
+    .faculty-photo {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #ddd;
+    }
+    .faculty-details {
+      flex-grow: 1;
+    }
+    .faculty-details h3 {
       margin-top: 0;
       font-size: 1.5rem;
       color: #00274C;
@@ -96,51 +111,60 @@
     <section class="faculty-grid">
 
       <div class="faculty-card">
-        <h3>Dr. Jane Smith</h3>
-        <div class="faculty-info">
-          <p><strong>Title:</strong> Professor of Computer Science</p>
-          <p><strong>Department:</strong> School of Engineering and Computer Science</p>
-          <p><strong>Research Interests:</strong> Artificial Intelligence, Machine Learning, Healthcare Technology</p>
-          <p><strong>Research Lab:</strong> AI and Health Innovation Lab</p>
-        </div>
-        <div class="faculty-contact">
-          <p><strong>Email:</strong> <a href="mailto:jsmith@university.edu">jsmith@university.edu</a></p>
-          <p><strong>Phone:</strong> (555) 123-4567</p>
-          <p><strong>Office:</strong> Engineering Building, Room 302</p>
-        </div>
-      </div>
-
-      <div class="faculty-card">
-        <h3>Dr. John Doe</h3>
-        <div class="faculty-info">
-          <p><strong>Title:</strong> Associate Professor of Mechanical Engineering</p>
-          <p><strong>Department:</strong> School of Engineering</p>
-          <p><strong>Research Interests:</strong> Robotics, Autonomous Systems, Vehicle Safety</p>
-          <p><strong>Research Lab:</strong> Robotics and Mobility Research Lab</p>
-        </div>
-        <div class="faculty-contact">
-          <p><strong>Email:</strong> <a href="mailto:jdoe@university.edu">jdoe@university.edu</a></p>
-          <p><strong>Phone:</strong> (555) 234-5678</p>
-          <p><strong>Office:</strong> Tech Center, Room 210</p>
+        <img src="images/jane_smith.jpg" alt="Dr. Jane Smith" class="faculty-photo">
+        <div class="faculty-details">
+          <h3>Dr. Jane Smith</h3>
+          <div class="faculty-info">
+            <p><strong>Title:</strong> Professor of Computer Science</p>
+            <p><strong>Department:</strong> School of Engineering and Computer Science</p>
+            <p><strong>Research Interests:</strong> Artificial Intelligence, Machine Learning, Healthcare Technology</p>
+            <p><strong>Research Lab:</strong> AI and Health Innovation Lab</p>
+          </div>
+          <div class="faculty-contact">
+            <p><strong>Email:</strong> <a href="mailto:jsmith@university.edu">jsmith@university.edu</a></p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Office:</strong> Engineering Building, Room 302</p>
+          </div>
         </div>
       </div>
 
       <div class="faculty-card">
-        <h3>Dr. Sophia Nguyen</h3>
-        <div class="faculty-info">
-          <p><strong>Title:</strong> Assistant Professor of Environmental Science</p>
-          <p><strong>Department:</strong> School of Natural Sciences</p>
-          <p><strong>Research Interests:</strong> Renewable Energy, Climate Adaptation, Community Sustainability</p>
-          <p><strong>Research Lab:</strong> Sustainability and Energy Systems Lab</p>
-        </div>
-        <div class="faculty-contact">
-          <p><strong>Email:</strong> <a href="mailto:snguyen@university.edu">snguyen@university.edu</a></p>
-          <p><strong>Phone:</strong> (555) 345-6789</p>
-          <p><strong>Office:</strong> Science Complex, Room 410</p>
+        <img src="images/john_doe.jpg" alt="Dr. John Doe" class="faculty-photo">
+        <div class="faculty-details">
+          <h3>Dr. John Doe</h3>
+          <div class="faculty-info">
+            <p><strong>Title:</strong> Associate Professor of Mechanical Engineering</p>
+            <p><strong>Department:</strong> School of Engineering</p>
+            <p><strong>Research Interests:</strong> Robotics, Autonomous Systems, Vehicle Safety</p>
+            <p><strong>Research Lab:</strong> Robotics and Mobility Research Lab</p>
+          </div>
+          <div class="faculty-contact">
+            <p><strong>Email:</strong> <a href="mailto:jdoe@university.edu">jdoe@university.edu</a></p>
+            <p><strong>Phone:</strong> (555) 234-5678</p>
+            <p><strong>Office:</strong> Tech Center, Room 210</p>
+          </div>
         </div>
       </div>
 
-      <!-- Add more faculty cards here if needed -->
+      <div class="faculty-card">
+        <img src="images/sophia_nguyen.jpg" alt="Dr. Sophia Nguyen" class="faculty-photo">
+        <div class="faculty-details">
+          <h3>Dr. Sophia Nguyen</h3>
+          <div class="faculty-info">
+            <p><strong>Title:</strong> Assistant Professor of Environmental Science</p>
+            <p><strong>Department:</strong> School of Natural Sciences</p>
+            <p><strong>Research Interests:</strong> Renewable Energy, Climate Adaptation, Community Sustainability</p>
+            <p><strong>Research Lab:</strong> Sustainability and Energy Systems Lab</p>
+          </div>
+          <div class="faculty-contact">
+            <p><strong>Email:</strong> <a href="mailto:snguyen@university.edu">snguyen@university.edu</a></p>
+            <p><strong>Phone:</strong> (555) 345-6789</p>
+            <p><strong>Office:</strong> Science Complex, Room 410</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more faculty cards here -->
 
     </section>
 
