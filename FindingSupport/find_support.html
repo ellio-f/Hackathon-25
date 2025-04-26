@@ -2,21 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Finding Support | Your Site Name</title>
+  <title>Finding Support | Your University Name</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    header, footer {
+      background-color: #00274C;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h1, h2 {
+      color: #00274C;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight-box {
+      background-color: #e9f2fc;
+      padding: 2rem;
+      border-left: 6px solid #0066cc;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+    #labs-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .lab-entry {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .lab-entry:hover {
+      transform: translateY(-5px);
+    }
+    .lab-entry h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #00274C;
+    }
+    footer {
+      margin-top: 4rem;
+      background-color: #00274C;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Finding Support</h1>
-    <nav>
-      <!-- Add navigation links here -->
-    </nav>
+    <p>Your University Name</p>
   </header>
+
   <main>
-    <section>
+
+    <section class="highlight-box">
       <h2>Contact Our Support Team</h2>
       <p>For immediate help, email <a href="mailto:support@yoursite.com">support@yoursite.com</a> or call (555) 123-4567.</p>
     </section>
+
     <section>
       <h2>Frequently Asked Questions</h2>
       <ul>
@@ -24,6 +108,7 @@
         <li><strong>Where can I find technical help?</strong> Check our <a href="#">Help Center</a> or contact us directly.</li>
       </ul>
     </section>
+
     <section>
       <h2>Additional Resources</h2>
       <ul>
@@ -32,9 +117,11 @@
         <li><a href="#">Community Forums</a></li>
       </ul>
     </section>
+
     <section>
-      <h2>Labs</h2>
+      <h2>Research Labs</h2>
       <div id="labs-container">
+
         <div class="lab-entry">
           <h3>Professor Jane Smith</h3>
           <p><strong>Lab Description:</strong> Research on AI and machine learning algorithms for healthcare.</p>
@@ -49,16 +136,20 @@
 
         <div class="lab-entry">
           <h3>Professor Ella Richardson</h3>
-          <p><strong>Lab Description:</strong> Robotics and autonomous vehicle design.</p>
-          <p><strong>Students:</strong> Emily Chen, Noah Lee, Sarah Kim</p>
+          <p><strong>Lab Description:</strong> Human-centered AI systems for autonomous vehicles.</p>
+          <p><strong>Students:</strong> Olivia Brown, Ethan Smith, Mia Wilson</p>
         </div>
+
       </div>
     </section>
-  </main>
-  <footer>
-    <!-- Footer content -->
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html> 
 
+  </main>
+
+  <footer>
+    <p>© 2025 Your University Name | Finding Support</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
