@@ -1,0 +1,111 @@
+.funding-intro {
+    margin-bottom: 2.5rem;
+  }
+  .funding-intro h2 {
+    color: #BA0C2F;
+    margin-bottom: 0.5rem;
+    font-size: 1.45rem;
+  }
+  .funding-featured {
+    background: #f7e9ec;
+    border-left: 5px solid #BA0C2F;
+    padding: 1.2rem 1.5rem;
+    border-radius: 7px;
+    margin-bottom: 2rem;
+  }
+  .funding-featured h3 {
+    color: #8A1538;
+    margin-bottom: 0.7rem;
+  }
+  .funding-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .funding-list li {
+    margin-bottom: 1.1rem;
+    font-size: 1.07rem;
+  }
+  .funding-deadline {
+    color: #A89968;
+    font-weight: 500;
+  }
+  .funding-types {
+    margin-bottom: 2.5rem;
+  }
+  .funding-cards {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .funding-card {
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 1.2rem 1.1rem;
+    flex: 1 1 220px;
+    min-width: 220px;
+    box-shadow: 0 1px 4px rgba(186,12,47,0.06);
+  }
+  .funding-card h4 {
+    color: #BA0C2F;
+    margin-bottom: 0.6rem;
+  }
+  .funding-card ul {
+    margin-left: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  .funding-card a {
+    color: #8A1538;
+    font-size: 0.98rem;
+    text-decoration: underline;
+  }
+  .funding-steps {
+    margin-bottom: 2.5rem;
+  }
+  .funding-steps h3 {
+    color: #00356b;
+    margin-bottom: 0.7rem;
+  }
+  .funding-steps ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    background: #BA0C2F;
+    color: #fff;
+    padding: 0.6rem 1.3rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.7rem;
+    transition: background 0.18s;
+  }
+  .btn:hover {
+    background: #8A1538;
+  }
+  .funding-contact h3 {
+    color: #00356b;
+  }
+  .funding-contact ul {
+    margin-left: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  .funding-contact a {
+    color: #BA0C2F;
+    text-decoration: underline;
+  }
+  .du-logo {
+    max-width: 180px; /* Logo won't get bigger than this */
+    width: 100%;      /* Scales down on smaller screens */
+    height: auto;     /* Keeps aspect ratio */
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  @media (max-width: 700px) {
+    .funding-cards {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
+  
