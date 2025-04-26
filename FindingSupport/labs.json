@@ -7,6 +7,6 @@
     {
       "faculty": "Professor John Doe",
       "description": "Robotics and autonomous vehicle design.",
-      "students": ["Emily Chen", "Noah Lee", "Sarah Kim"]
+      "students": ["Emily Chen", "Noah Lee", "Sarah  Kim"]
     }
 ]
