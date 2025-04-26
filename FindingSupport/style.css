@@ -1,11 +1,10 @@
-/* Reset some default browser styles */
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Base styles */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f9f9fa;
@@ -16,93 +15,102 @@ body {
 
 /* Header */
 header {
-  background-color: #00356b; /* Yale blue, change as needed */
+  background-color: #BA0C2F; /* DU Crimson */
   color: #fff;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1.2rem 1rem;
   text-align: center;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 1px;
+  margin-bottom: 0.4rem;
 }
 
-/* Navigation */
-nav {
-  background: #e6e6e6;
-  padding: 0.5rem 0;
-  margin-bottom: 2rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav a {
-  color: #00356b;
-  text-decoration: none;
+header .subtitle {
+  font-size: 1.15rem;
+  color: #FFD700;
   font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: #00509e;
-  text-decoration: underline;
+  letter-spacing: 0.5px;
 }
 
 /* Main content */
 main {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem 1rem;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(186,12,47,0.07);
 }
 
-section {
-  margin-bottom: 2.5rem;
+/* Subtabs */
+.subtabs {
+  display: flex;
+  flex-direction: column;
 }
 
-h2 {
-  color: #00356b;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+.subtabs input[type="radio"] {
+  display: none;
 }
 
-ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+.subtabs label {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  margin-right: 0.5rem;
+  background: #f3f3f3;
+  color: #BA0C2F;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: background 0.2s, color 0.2s, border-bottom 0.2s;
+  font-size: 1.09rem;
 }
 
-li {
-  margin-bottom: 0.7rem;
+.subtabs label:hover,
+.subtabs input[type="radio"]:focus + label {
+  background: #f7e9ec;
+  color: #8A1538;
 }
 
-/* Links */
-a {
-  color: #00509e;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #002147;
-}
-
-/* Footer */
-footer {
-  background: #e6e6e6;
+.subtabs input[type="radio"]:checked + label {
+  background: #fff;
   color: #232323;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  border-top: 1px solid #ccc;
+  border-bottom: 3px solid #A89968; /* DU Gold */
+  position: relative;
+  z-index: 2;
+}
+
+.tab-content {
+  display: none;
+  background: #fff;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #ececec;
+  margin-top: -2px;
+}
+
+#funding:checked ~ label[for="funding"] ~ #funding-content,
+#advising:checked ~ label[for="advising"] ~ #advising-content,
+#career:checked ~ label[for="career"] ~ #career-content {
+  display: block;
+}
+
+/* Arrange labels horizontally */
+.subtabs label {
+  margin-bottom: -3px;
+}
+.subtabs {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 1.5rem;
+}
+.subtabs label {
+  margin-right: 0.2rem;
 }
 
 /* Responsive design */
@@ -110,9 +118,26 @@ footer {
   main {
     padding: 1rem 0.5rem;
   }
-
-  nav ul {
+  .subtabs {
     flex-direction: column;
-    gap: 1rem;
+    align-items: stretch;
   }
+  .subtabs label {
+    border-radius: 8px 8px 0 0;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Footer */
+footer {
+  background: #ececec;
+  color: #232323;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.98rem;
+  border-top: 1px solid #ccc;
 }
