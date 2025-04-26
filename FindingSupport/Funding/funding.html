@@ -2,98 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Funding | University of Denver Research</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Research Funding | Your University Name</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    header, footer {
+      background-color: #00274C;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h1, h2 {
+      color: #00274C;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight-box {
+      background-color: #e9f2fc;
+      padding: 2rem;
+      border-left: 6px solid #0066cc;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+    a.button:hover {
+      background-color: #004c99;
+    }
+    .funding-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .funding-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .funding-card:hover {
+      transform: translateY(-5px);
+    }
+    .funding-card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #00274C;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="du_logo.png" alt="University of Denver logo" class="du-logo">
-        <h1>Finding Support</h1>
-        <p class="subtitle">Resources for Research at the University of Denver</p>
-    </header>
+
   <header>
-    <h1>Funding</h1>
-    <p class="subtitle">Explore research funding opportunities at the University of Denver</p>
+    <h1>Research Funding</h1>
+    <p>Your University Name</p>
   </header>
+
   <main>
-    <section class="funding-intro">
-      <h2>Find the Right Funding for Your Research</h2>
-      <p>
-        The University of Denver is committed to supporting research and innovation. Below you’ll find resources for internal and external funding, application guidance, and contacts for personalized support.
-      </p>
+
+    <section class="highlight-box">
+      <h2>Supporting Your Research Journey</h2>
+      <p>Your University Name offers a variety of funding opportunities to help support research across disciplines. Whether you're an undergraduate, graduate student, or faculty member, we provide the resources you need to turn your ideas into reality.</p>
+      <a href="#" class="button">Contact Funding Office</a>
     </section>
 
-    <section class="funding-featured">
-      <h3>Featured Opportunities</h3>
-      <ul class="funding-list">
-        <li>
-          <strong>DU Research Seed Grants</strong><br>
-          <span class="funding-deadline">Deadline: May 15, 2025</span><br>
-          <a href="#">Learn more & apply</a>
-        </li>
-        <li>
-          <strong>Undergraduate Research Fellowships</strong><br>
-          <span class="funding-deadline">Deadline: June 10, 2025</span><br>
-          <a href="#">Learn more & apply</a>
-        </li>
-        <li>
-          <strong>NSF Graduate Research Fellowship</strong><br>
-          <span class="funding-deadline">Deadline: October 18, 2025</span><br>
-          <a href="#">Learn more & apply</a>
-        </li>
-      </ul>
-    </section>
+    <section>
+      <h2>Explore Funding Opportunities</h2>
+      <div class="funding-grid">
 
-    <section class="funding-types">
-      <h3>Types of Funding</h3>
-      <div class="funding-cards">
         <div class="funding-card">
-          <h4>Internal Funding</h4>
-          <ul>
-            <li>Seed Grants</li>
-            <li>Faculty Research Awards</li>
-            <li>Student Travel Grants</li>
-          </ul>
-          <a href="#">View all internal funding</a>
+          <h3><a href="#">Undergraduate Research Grants</a></h3>
+          <p>Small project grants to encourage early research experience for undergraduates.</p>
         </div>
+
         <div class="funding-card">
-          <h4>External Funding</h4>
-          <ul>
-            <li>Federal Agencies (NSF, NIH, DOE, etc.)</li>
-            <li>Private Foundations</li>
-            <li>Industry Partnerships</li>
-          </ul>
-          <a href="#">Explore external opportunities</a>
+          <h3><a href="#">Graduate Fellowships</a></h3>
+          <p>Competitive awards to support graduate research across all departments.</p>
         </div>
+
+        <div class="funding-card">
+          <h3><a href="#">Faculty Seed Grants</a></h3>
+          <p>Internal funding for faculty to launch innovative research projects or pilot studies.</p>
+        </div>
+
+        <div class="funding-card">
+          <h3><a href="#">External Funding Resources</a></h3>
+          <p>Tools and links to major external agencies like NSF, NIH, DOE, and private foundations.</p>
+        </div>
+
       </div>
     </section>
 
-    <section class="funding-steps">
-      <h3>How to Apply</h3>
-      <ol>
-        <li>Identify suitable funding opportunities.</li>
-        <li>Review eligibility and application requirements.</li>
-        <li>Prepare your proposal and supporting documents.</li>
-        <li>Submit your application by the deadline.</li>
-        <li>Contact the Research Support Office for assistance.</li>
-      </ol>
-      <a class="btn" href="#">Download Application Guide (PDF)</a>
-    </section>
-
-    <section class="funding-contact">
-      <h3>Contact & Support</h3>
-      <p>
-        Need help finding or applying for funding? Our research support team is here for you.
-      </p>
+    <section>
+      <h2>Funding Support Services</h2>
       <ul>
-        <li>Email: <a href="mailto:research@du.edu">research@du.edu</a></li>
-        <li>Phone: (303) 871-1234</li>
-        <li><a href="#">Book a consultation</a></li>
+        <li>Proposal development assistance</li>
+        <li>Grant writing workshops</li>
+        <li>Compliance and budget consultation</li>
+        <li>Post-award project management support</li>
       </ul>
     </section>
+
+    <section class="highlight-box">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our Funding Opportunities Newsletter and never miss a grant, award, or research competition announcement.</p>
+      <a href="#" class="button">Subscribe Now</a>
+    </section>
+
   </main>
+
   <footer>
-    &copy; 2025 University of Denver | Research & Innovation
+    <p>© 2025 Your University Name | Research Funding</p>
   </footer>
+
 </body>
 </html>
