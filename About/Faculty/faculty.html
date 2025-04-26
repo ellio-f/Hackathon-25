@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faculty | Your University Name</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    header, footer {
+      background-color: #00274C;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h1, h2 {
+      color: #00274C;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .faculty-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .faculty-card:hover {
+      transform: translateY(-5px);
+    }
+    .faculty-card h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #00274C;
+    }
+    .faculty-info {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .faculty-contact {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Faculty</h1>
+    <p>Your University Name | Research and Innovation</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Meet Our Distinguished Faculty</h2>
+      <p>Our faculty members are leaders in their fields, advancing research, innovation, and student mentorship across a wide range of disciplines.</p>
+    </section>
+
+    <section class="faculty-grid">
+
+      <div class="faculty-card">
+        <h3>Dr. Jane Smith</h3>
+        <div class="faculty-info">
+          <p><strong>Title:</strong> Professor of Computer Science</p>
+          <p><strong>Department:</strong> School of Engineering and Computer Science</p>
+          <p><strong>Research Interests:</strong> Artificial Intelligence, Machine Learning, Healthcare Technology</p>
+          <p><strong>Research Lab:</strong> AI and Health Innovation Lab</p>
+        </div>
+        <div class="faculty-contact">
+          <p><strong>Email:</strong> <a href="mailto:jsmith@university.edu">jsmith@university.edu</a></p>
+          <p><strong>Phone:</strong> (555) 123-4567</p>
+          <p><strong>Office:</strong> Engineering Building, Room 302</p>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h3>Dr. John Doe</h3>
+        <div class="faculty-info">
+          <p><strong>Title:</strong> Associate Professor of Mechanical Engineering</p>
+          <p><strong>Department:</strong> School of Engineering</p>
+          <p><strong>Research Interests:</strong> Robotics, Autonomous Systems, Vehicle Safety</p>
+          <p><strong>Research Lab:</strong> Robotics and Mobility Research Lab</p>
+        </div>
+        <div class="faculty-contact">
+          <p><strong>Email:</strong> <a href="mailto:jdoe@university.edu">jdoe@university.edu</a></p>
+          <p><strong>Phone:</strong> (555) 234-5678</p>
+          <p><strong>Office:</strong> Tech Center, Room 210</p>
+        </div>
+      </div>
+
+      <div class="faculty-card">
+        <h3>Dr. Sophia Nguyen</h3>
+        <div class="faculty-info">
+          <p><strong>Title:</strong> Assistant Professor of Environmental Science</p>
+          <p><strong>Department:</strong> School of Natural Sciences</p>
+          <p><strong>Research Interests:</strong> Renewable Energy, Climate Adaptation, Community Sustainability</p>
+          <p><strong>Research Lab:</strong> Sustainability and Energy Systems Lab</p>
+        </div>
+        <div class="faculty-contact">
+          <p><strong>Email:</strong> <a href="mailto:snguyen@university.edu">snguyen@university.edu</a></p>
+          <p><strong>Phone:</strong> (555) 345-6789</p>
+          <p><strong>Office:</strong> Science Complex, Room 410</p>
+        </div>
+      </div>
+
+      <!-- Add more faculty cards here if needed -->
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Your University Name | Faculty</p>
+  </footer>
+
+</body>
+</html>
