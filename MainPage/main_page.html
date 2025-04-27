@@ -48,7 +48,7 @@
       display: flex;
       z-index: 3;
       box-sizing: border-box;
-      background-color: #111;
+      background-color: #ba0c2f;
     }
 
     /* Adjust logo-box */
@@ -57,7 +57,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 20px;
-      background: #111;
+      background: #f8f6f6;
     }
 
     /* School logo */
@@ -125,18 +125,41 @@
       align-items: center;
     }
 
+    /* TITLE BLOCK STYLES */
     .header-title {
-      font-size: 6rem;
+      font-size: 3.5rem;
       font-weight: bold;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
       margin: 0 0 18px 0;
       line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      text-overflow: ellipsis;
+      /* Ensure text doesn't overflow */
     }
 
+    .header-title span {
+      display: inline-block;
+      animation: moveBanner 8s linear infinite;
+    }
+
+    @keyframes moveBanner {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+
     .header-subtitle {
-      font-size: 2.3rem;
-      font-style: italic;
-      color: #ffd700;
+      font-size: rem;
+      font-style: san-serif;
+      color: #b4a470;
       margin-bottom: 18px;
       margin-top: -5px;
       font-weight: 600;
@@ -145,13 +168,27 @@
     }
 
     .header-desc {
-      font-size: 1.3rem;
-      color: #f8f8f8;
+      font-size: 1.3rem color: #f8f8f8;
       margin: 0;
       line-height: 1.5;
       font-weight: 400;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     }
+
+    /* Target the <p> element inside the title-block */
+    .title-block p {
+      font-family: 'Arial', sans-serif;
+      /* Replace with your desired font */
+      font-size: 1.3rem;
+      /* Adjust font size as needed */
+      line-height: 1.6;
+      /* Adjust line height for better readability */
+      color: #ffffff;
+      /* You can also change the text color */
+      font-weight: normal;
+      /* Set font weight */
+    }
+
 
     /* FADE TO BLACK SECTION */
     .fade-to-black {
@@ -193,7 +230,6 @@
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       flex: 1 1 0;
       aspect-ratio: 1 / 1;
-      /* No max-width so all three fill the row equally */
       min-width: 0;
       width: 100%;
       color: #fff;
@@ -203,21 +239,27 @@
       justify-content: flex-start;
       padding: 32px 16px 24px 16px;
       box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      /* Added smooth transitions */
+    }
+
+    .info-box:hover {
+      transform: scale(1.05);
+      /* Slightly enlarge the box */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      /* Deeper shadow for hover effect */
+      background-color: #333;
+      /* Darker background on hover */
     }
 
     .research-photo {
       width: 100%;
-      /* Cover the entire box */
       max-width: 400px;
-      /* Set a maximum width */
       height: 400px;
-      /* Make images square */
       display: block;
       margin: 0 auto 18px auto;
       object-fit: cover;
-      /* Ensure the image covers the area */
       object-position: center;
-      /* Center the image */
       background: #222;
     }
 
@@ -225,7 +267,7 @@
       margin-top: 0;
       margin-bottom: 16px;
       font-size: 2rem;
-      color: #ffd700;
+      color: #b4a470;
       letter-spacing: 1px;
     }
 
@@ -320,9 +362,9 @@
     /* Extra box styles */
     .extra-section {
       width: 100%;
-      background: #131313;
+      background: #ba0c2f;
       padding: 100px 0;
-      padding-bottom: 0px;
+      padding-bottom: 100px;
       /* Increased padding */
       box-sizing: border-box;
       display: flex;
@@ -335,6 +377,7 @@
       background: #181818;
       color: #fff;
       padding: 48px 36px;
+      padding-bottom: 40px;
       /* Increased padding */
       max-width: 1400px;
       /* Increased max-width */
@@ -370,7 +413,7 @@
     .extra-title {
       font-size: 2.5rem;
       /* Increased font-size */
-      color: #ffd700;
+      color: #b4a470;
       margin: 0 0 16px 0;
       /* Increased margin-bottom */
     }
@@ -480,7 +523,7 @@
     <!-- Logo in a full-width white rectangle box -->
     <div class="top-bar">
       <div class="logo-box">
-        <img src="your-logo.png" class="school-logo" alt="School Logo" />
+        <img src="Denver.png" class="school-logo" alt="School Logo" />
       </div>
       <div class="menu-box">
         <a href="#" class="menu-link">Conduct Research</a>
@@ -494,7 +537,7 @@
     </nav>
     <!-- Centered title, subtitle, and description block -->
     <div class="title-block">
-      <h1 class="header-title">Innovative Research Space</h1>
+      <h1 class="header-title"><span>Innovative Research Space</span></h1>
       <div class="header-subtitle">“Where Curiosity Creates Change”</div>
       <p>
         At the University of Denver, we drive discovery, inspire innovation, and empower students and faculty to create
