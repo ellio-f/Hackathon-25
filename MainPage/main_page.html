@@ -154,7 +154,7 @@
     .black-section {
       background: #000;
       color: #fff;
-      min-height: 1100px;
+      min-height: 900px;
       width: 100%;
       display: flex;
       align-items: flex-start;
@@ -167,7 +167,7 @@
     .three-boxes {
       display: flex;
       width: 100%;
-      max-width: 1800px;
+      max-width: 1400px;
       margin: 0 auto;
       gap: 48px;
       justify-content: center;
@@ -196,9 +196,9 @@
     .research-photo {
       width: 100%;
       /* Cover the entire box */
-      max-width: 450px;
+      max-width: 400px;
       /* Set a maximum width */
-      height: 450px;
+      height: 400px;
       /* Make images square */
       display: block;
       margin: 0 auto 18px auto;
@@ -219,7 +219,7 @@
 
     .info-box p {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       line-height: 1.6;
       color: #eee;
     }
@@ -304,6 +304,136 @@
         margin-top: 70px;
       }
     }
+
+    /* Extra box styles */
+    .extra-section {
+      width: 100%;
+      background: #131313;
+      padding: 100px 0;
+      padding-bottom: 0px;
+      /* Increased padding */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .extra-box {
+      display: flex;
+      align-items: flex-start;
+      background: #181818;
+      color: #fff;
+      padding: 48px 36px;
+      /* Increased padding */
+      max-width: 1400px;
+      /* Increased max-width */
+      border-radius: 16px;
+      /* Increased border-radius */
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+      /* Adjusted box-shadow */
+      gap: 48px;
+      /* Increased gap */
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .extra-image {
+      width: 600px;
+      /* Increased width */
+      height: 500px;
+      /* Increased height */
+      object-fit: cover;
+      border-radius: 12px;
+      /* Increased border-radius */
+      background: #222;
+      flex-shrink: 0;
+    }
+
+    .extra-content {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .extra-title {
+      font-size: 2.5rem;
+      /* Increased font-size */
+      color: #ffd700;
+      margin: 0 0 16px 0;
+      /* Increased margin-bottom */
+    }
+
+    .extra-author {
+      font-size: 1.3rem;
+      /* Increased font-size */
+      color: #bbb;
+      margin-bottom: 24px;
+      /* Increased margin-bottom */
+      font-style: italic;
+    }
+
+    .first-paragraph {
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 0px;
+      /* Adds space below the first paragraph */
+      padding-bottom: 15px;
+    }
+
+    .second-paragraph {
+      font-size: 20px;
+      color: #fffefe;
+      margin-top: 0px;
+      /* Adds space above the second paragraph */
+      padding-top: 0px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .extra-box {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 16px;
+        /* Adjusted padding */
+        gap: 24px;
+        /* Adjusted gap */
+      }
+
+      .extra-image {
+        width: 100%;
+        max-width: 400px;
+        /* Increased max-width */
+        height: auto;
+      }
+
+      .extra-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 0px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 0px;
+    }
+
+    .box {
+      background-color: white;
+      padding: 0px;
+      width: 200px;
+      text-align: center;
+      border-radius: 0px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -361,10 +491,51 @@
     </div>
   </section>
 
-  <div class="main-content">
-    <p>Scroll down to see more content!</p>
-    <p style="margin-top: 1200px;">You've reached the bottom!</p>
-  </div>
+  <!-- New Section for Extra Box -->
+  <section class="extra-section">
+    <div class="extra-box">
+      <img src="HumanRobot.jpeg" alt="Extra Image" class="extra-image">
+      <div class="extra-content">
+        <h3 class="extra-title">Engineering Innovation: Robots Providing Social Support
+        </h3>
+        <div class="extra-author">Writer: Kevin Douglas (BA 2020)
+        </div>
+        <p class="first-paragraph">
+          Dream Face Technologies, founded by Dr. Mohammad H. Mahoor and led alongside principal engineer Josh Lane,
+          focuses on developing social robots to support individuals with autism, depression, Alzheimer’s, and dementia.
+          Their social robot, Ryan, is designed to improve users’ quality of life by providing companionship, medication
+          reminders, conversation, mood recognition, and cognitive stimulation through games and reminiscence
+          activities. Beginning with early prototypes like the "eBear," the team has advanced Ryan through multiple
+          iterations, incorporating extensive research and user feedback to create a versatile, supportive tool for
+          senior care environments.
+
+        </p>
+        <p class="second-paragraph">
+          The University of Denver has provided significant support to Dream Face Technologies through access to
+          engineering facilities, resources, and a strong pool of student and alumni talent.The university’s commitment
+          to fostering innovation and entrepreneurship has played a critical role in the company's growth and success.
+          Dream Face Technologies remains closely connected to the DU community, with approximately 80% of its team
+          composed of DU students and graduates.
+        </p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your main page content here -->
+  <section class="bottom-bar">
+    <div class="box">
+      <h3>Find Support</h3>
+    </div>
+    <div class="box">
+      <h3>Conduct Research</h3>
+    </div>
+    <div class="box">
+      <h3>About</h3>
+    </div>
+  </section>
+
+
 </body>
 
 </html>
