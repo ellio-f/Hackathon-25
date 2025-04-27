@@ -1,0 +1,38 @@
+[
+    {
+        "title": "BioSun Lab",
+        "description": "Incorporating Engineering Methods in Cancer Research for Noninvasive Cancer Detection",
+        "location": "Ritchie School of Computer science and Engineering",
+        "image": "sunlabteam.jpg",
+        "link": "http://biosunlab.com/research.html",
+        "professor": "Dr. Sun",
+        "tags": ["Cancer Research", "Engineering", "Ritchie School of COMP SCI & Engineering"]
+    },
+    {
+        "title": "Neurodegenerative Biomarker Lab",
+        "description": "Identifying molecular fingerprints that facilitate the early and accurate diagnosis of challenging neurodegenerative conditions.",
+        "location": "Ritchie School of Computer science and Engineering",
+        "image": "AZLAB.jpg",
+        "link": "https://ritchieschool.du.edu/aging/about/people/daniel-antonio-paredes",
+        "professor": "Dr. Daniel Antonio Paredes",
+        "tags": ["Neurodegenerative Diseases", "Clinical Experience", "Ritchie School of COMP SCI & Engineering"]
+    },
+    {
+        "title": "Innovation Lab",
+        "description": "interdisciplinary, experiential, and project-based learning laboratories, including three fully equipped maker spaces: Digital Lab, Woods Lab, and Plastics Lab.",
+        "location": "Ritchie School of Computer science and Engineering",
+        "image": "innovationlab.jpg",
+        "link": "https://ritchieschool.du.edu/innovationlabs",
+        "professor": "Dmitri Obergfell",
+        "tags": ["Wood Work", "Metal Shop", "Creativity", "Ritchie School of COMP SCI & Engineering"]
+    },
+    {
+        "title": "MEME Lab",
+        "description": "We analyze modern language and see how meme interact with social media users.",
+        "location": "Ritchie School of Computer science and Engineering",
+        "image": "meme.jpg",
+        "link": "https://brainrot.fandom.com/wiki/Ballerina_Cappuccina",
+        "professor": "Leo Liu",
+        "tags": ["Creativity", "Ritchie School of COMP SCI & Engineering"]
+    }
+]
