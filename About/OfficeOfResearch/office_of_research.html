@@ -6,27 +6,42 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
+      background-color: #f5f7fa;
+      color: #333;
     }
     header, footer {
       background-color: #00274C;
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     main {
-      padding: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
     h1, h2 {
       color: #00274C;
     }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+    }
     ul {
-      margin-top: 0.5rem;
       padding-left: 1.5rem;
     }
     a {
@@ -35,6 +50,13 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    .highlight-box {
+      background-color: #e9f2fc;
+      padding: 2rem;
+      border-left: 6px solid #0066cc;
+      border-radius: 8px;
+      margin-bottom: 3rem;
     }
   </style>
 </head>
@@ -47,7 +69,7 @@
 
   <main>
 
-    <section>
+    <section class="highlight-box">
       <h2>Our Mission</h2>
       <p>The Office of Research is dedicated to supporting the research, scholarly, and creative endeavors of our faculty, students, and staff. We are committed to advancing discovery, fostering innovation, and promoting collaboration across disciplines to address global challenges.</p>
     </section>
@@ -74,7 +96,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="highlight-box">
       <h2>Contact Us</h2>
       <p>Email: <a href="mailto:research@university.edu">research@university.edu</a></p>
       <p>Phone: (555) 987-6543</p>
