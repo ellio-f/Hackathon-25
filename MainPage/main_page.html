@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Header with Smooth Fade and Two Large Square Boxes</title>
+  <title>Header with Smooth Fade and Three Large Square Boxes</title>
   <style>
     body {
       margin: 0;
@@ -14,8 +14,9 @@
 
     /* HEADER SECTION */
     .header {
-      height: 900px;
-      background: url('IMG_1580.jpg') center/cover no-repeat;
+      height: 1200px;
+      background: url('IMG_1580.jpg') center center no-repeat;
+      background-size: cover;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -149,7 +150,7 @@
       padding: 0;
     }
 
-    /* BLACK SECTION WITH TWO SQUARE BOXES */
+    /* BLACK SECTION WITH THREE SQUARE BOXES */
     .black-section {
       background: #000;
       color: #fff;
@@ -163,10 +164,10 @@
       margin: 0;
     }
 
-    .two-boxes {
+    .three-boxes {
       display: flex;
       width: 100%;
-      max-width: 1200px;
+      max-width: 1800px;
       margin: 0 auto;
       gap: 48px;
       justify-content: center;
@@ -177,21 +178,35 @@
     .info-box {
       background: #181818;
       border-radius: 0;
-      /* No rounded corners */
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       flex: 1 1 0;
       aspect-ratio: 1 / 1;
-      max-width: 500px;
-      /* Make the box bigger by increasing this */
-      min-width: 250px;
+      /* No max-width so all three fill the row equally */
+      min-width: 0;
       width: 100%;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 32px;
-      /* No animation or transition */
+      justify-content: flex-start;
+      padding: 32px 16px 24px 16px;
+      box-sizing: border-box;
+    }
+
+    .research-photo {
+      width: 100%;
+      /* Cover the entire box */
+      max-width: 450px;
+      /* Set a maximum width */
+      height: 450px;
+      /* Make images square */
+      display: block;
+      margin: 0 auto 18px auto;
+      object-fit: cover;
+      /* Ensure the image covers the area */
+      object-position: center;
+      /* Center the image */
+      background: #222;
     }
 
     .info-box h3 {
@@ -204,12 +219,19 @@
 
     .info-box p {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       line-height: 1.6;
       color: #eee;
     }
 
     /* Responsive for mobile */
+    @media (max-width: 1200px) {
+      .three-boxes {
+        max-width: 1000px;
+        gap: 24px;
+      }
+    }
+
     @media (max-width: 900px) {
       .header-title {
         font-size: 3.2rem;
@@ -242,7 +264,7 @@
         padding: 0;
       }
 
-      .two-boxes {
+      .three-boxes {
         flex-direction: column;
         gap: 24px;
         max-width: 400px;
@@ -252,7 +274,11 @@
         max-width: 100%;
         min-width: 0;
         aspect-ratio: 1/1;
-        padding: 28px 14px;
+        padding: 28px 10px;
+      }
+
+      .research-photo {
+        max-width: 180px;
       }
     }
 
@@ -297,10 +323,9 @@
     <div class="title-block">
       <h1 class="header-title">Innovative Research Space</h1>
       <div class="header-subtitle">“Where Curiosity Creates Change”</div>
-      <p class="header-desc">
-        At the University of Denver, we advance discovery, inspire innovation, and empower students and faculty to turn
-        ideas into real-world impact. As an R1 research institution, we are committed to shaping a better future through
-        bold, collaborative research.
+      <p>
+        At the University of Denver, we drive discovery, inspire innovation, and empower students and faculty to create
+        real-world impact through bold, collaborative research as an R1 institution.
       </p>
     </div>
   </div>
@@ -308,16 +333,30 @@
   <!-- Fade transition between header and black section -->
   <div class="fade-to-black"></div>
 
-  <!-- Black section with two large square boxes -->
+  <!-- Black section with three large square boxes and research photos -->
   <section class="black-section">
-    <div class="two-boxes">
+    <div class="three-boxes">
       <div class="info-box">
-        <h3>Box One</h3>
-        <p>Content for the first box goes here. You can add anything you like.</p>
+        <img src="CardiacLabC.jpg" alt="Research 1" class="research-photo">
+        <h3>Computational Biomechanics</h3>
+        <p>Computational models uses to evaluate orthopaedic implants, improving design and patient outcomes. The lab
+          focuses on joint mechanics and musculoskeletal systems to understand how implants affect human motion,
+          enhancing healthcare and treatments for musculoskeletal issues.
+        </p>
       </div>
       <div class="info-box">
-        <h3>Box Two</h3>
-        <p>Content for the second box goes here. Customize as needed.</p>
+        <img src="MSEngineer.avif" alt="Research 2" class="research-photo">
+        <h3>Probabilistic Mechanics</h3>
+        <p>Studies how variability in mechanical systems affects performance, using probabilistic analysis and Monte
+          Carlo simulations. This research improves understanding of joint mechanics and materials properties,
+          optimizing designs in orthopaedics and nanotechnology for safer, more reliable solutions.</p>
+      </div>
+      <div class="info-box">
+        <img src="orthopaedic.jpg" alt="Research 3" class="research-photo">
+        <h3>Orthopaedic Biomechanics </h3>
+        <p>Applies engineering principles to study joint mechanics, human motion, and implant testing. Using
+          experimental and computational methods, it develops innovative solutions to improve musculoskeletal health and
+          enhance implant design, advancing medical technologies for better patient outcomes.</p>
       </div>
     </div>
   </section>
