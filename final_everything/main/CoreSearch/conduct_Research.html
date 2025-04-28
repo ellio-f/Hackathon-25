@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cores Directory | University of Denver Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Load Oswald from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- Base ---------- */
+    html, body {
+      margin: 0; padding: 0;
+      font-family: 'Neue Haas Unica', Helvetica, Arial, sans-serif;
+      background-color: rgb(186,12,47);
+      color: #fff;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Hero ---------- */
+    .hero-rect {
+      position: relative;
+      width: 100%; height: 50vh;
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.85) 100%),
+        url('researcharise.jpg');
+      background-size: cover;
+      background-position: center 37%;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; align-items: flex-start;
+      padding: 2rem; box-sizing: border-box;
+    }
+    .logo { position: absolute; top: 1rem; left: 1rem; width: 160px; }
+    .subtitle { font-size: 2rem; margin: 0 0 1rem; font-weight: 300; }
+    .title    { font-size: 4rem; margin: 0; font-weight: 600; }
+
+    /* ---------- Search ---------- */
+    .search-container {
+      background-color: rgb(186,12,47);
+      padding: 2rem 1rem;
+    }
+    .search-form {
+      max-width: 900px; margin: 0 auto;
+      display: flex; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 4px; overflow: hidden;
+    }
+    .search-input {
+      flex: 1; padding: 1rem; font-size: 1.1rem; border: none; outline: none;
+    }
+    .search-button {
+      padding: 1rem 1.5rem; border: none;
+      background-color: rgb(255,209,0); color: rgb(186,12,47);
+      font-size: 1.1rem; cursor: pointer;
+    }
+    .search-button:hover { background-color: rgb(230,189,0); }
+
+    /* ---------- Filters (only one expands) ---------- */
+    .filters-container {
+      max-width: 1400px; margin: 2rem 1rem 1rem;
+      display: flex; justify-content: center; gap: 1rem;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+    details.filter {
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 0.25rem 0.5rem 0.75rem;
+      flex: 1; max-width: 400px;
+      transition: all 0.3s ease;
+    }
+    details.filter summary {
+      list-style: none; cursor: pointer;
+      font-size: 1.5rem; font-weight: 500; padding: 0.5rem 0;
+      font-family: 'Oswald', sans-serif; position: relative;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details.filter summary::after {
+      content: '+'; position: absolute; right: 0; top: 50%;
+      transform: translateY(-50%); font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    details.filter[open] summary::after {
+      content: '–'; transform: translateY(-50%) rotate(180deg);
+    }
+    .filter-options {
+      margin-top: 0.5rem; display: flex; flex-direction: column;
+    }
+    .filter-options label {
+      margin-bottom: 0.5rem; font-size: 0.9rem; cursor: pointer;
+    }
+    .filter-options input[type="checkbox"] {
+      margin-right: 0.5rem; accent-color: rgb(186,12,47);
+    }
+
+  
+ 
+      /* Result Card Styling */
+    .result-card {
+      width: 300px; /* Fixed width for all result cards */
+      height: 400px; /* Fixed height for all result cards */
+      background: #fff;
+      color: #000;
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0 auto; /* Centers the card horizontally */
+    }
+
+    /* Image Styling */
+ 
+    .result-card img {
+      width: 100%; /* Image spans the full width of the card */
+      height: 200px; /* Fixed height for all images */
+      object-fit: cover; /* Crops the image to fit the dimensions without distortion */
+      border-radius: 4px; /* Rounded corners for the image */
+      border: 1px solid #000; /* Thin black border around the image */
+    }
+
+    /* Results Grid Styling */
+    .results-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+      gap: 1rem; /* Space between cards */
+      justify-content: center;
+      padding: 1rem
+    }
+
+    
+    .tag {
+    background-color: #003366;
+    color: #fff;
+    font-size: 0.65rem; /* Reduced font size */
+    padding: 0.15rem 0.4rem; /* Reduced padding */
+    border-radius: 4px;
+    display: inline-block;
+    }
+
+    .tags {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem; /* Reduced gap between tags */
+    }
+
+
+    /* ---------- Results Header ---------- */
+    .results-header {
+      max-width: 1400px; margin: 1rem auto 1rem; padding: 0 1rem;
+      display: flex; align-items: center; font-family: 'Oswald', sans-serif;
+    }
+    .results-header .count {
+      font-size: 1.5rem; font-weight: 600; margin-right: 1rem;
+    }
+    .results-header h2 {
+      font-size: 1rem; font-weight: 400; letter-spacing: .05em;
+      text-transform: uppercase; margin: 0; flex: 1;
+    }
+    .results-header::after {
+      content: ''; flex: 2; height: 1px; background: rgba(255,255,255,0.5);
+      margin-left: 1rem;
+    }
+
+    /* ---------- Results Grid ---------- */
+    .results-container {
+      max-width: 1400px; margin: 0 auto 2rem; padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      column-gap: 0.5rem; row-gap: 1rem; padding-bottom: 2rem;
+    }
+    .result-card {
+      background: #fff; color: #000; border-radius: 4px;
+      padding: 0.5rem; aspect-ratio: 1/1;
+      display: flex; flex-direction: column;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .result-card.placeholder { visibility: hidden; }
+    .result-card .badge { display: none; }
+
+    .result-card h3 {
+      margin: 0 0 0.25rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9375rem; line-height: 1.2; color: #003366;
+    }
+    .result-card p {
+      margin: 0 0 0.25rem; flex-grow: 1;
+      font-size: 0.75rem; line-height: 1.4;
+    }
+    .result-card .location {
+      font-size: 0.675rem; color: #555; margin-top: auto;
+    }
+
+    /* ---------- Pagination ---------- */
+    .pagination {
+      max-width: 1400px; margin: 0 auto 2rem; padding: 0 1rem;
+      display: flex; justify-content: center; gap: .5rem;
+    }
+    .page-btn {
+      background: #fff; border: 1px solid #ccc;
+      color: #333; padding: .25rem .375rem;
+      border-radius: 4px; cursor: pointer; font-size: .675rem;
+    }
+    .page-btn.active {
+      background: #003366; color: #fff; border-color: #003366;
+    }
+    .page-btn:disabled { opacity: 0.5; cursor: default; }
+  </style>
+</head>
+
+<body>
+<!-- Hero Section -->
+<div class="hero-rect">
+  <img src="DUlogo2.png" alt="DU Logo" class="logo">
+  <h2 class="subtitle">Research at DU</h2>
+  <h1 class="title">Cores Directory</h1>
+</div>
+
+<!-- Search Section -->
+<div class="search-container">
+  <form class="search-form">
+    <input type="text" placeholder="Search for resources…" class="search-input">
+    <button type="submit" class="search-button">Search</button>
+  </form>
+</div>
+
+<!-- Filters Section -->
+<div class="filters-container">
+  <details class="filter" id="filter-schools">
+    <summary>Filter by Department</summary>
+    <div class="filter-options">
+      <label><input type="checkbox"> Ritchie School of COMP SCI & Engineering</label>
+      <label><input type="checkbox"> Daniels College of Business</label>
+      <label><input type="checkbox"> Natural Science and Mathematics</label>
+      <label><input type="checkbox"> College of Arts & Humanities</label>
+      <label><input type="checkbox"> Korbel School of International Studies</label>
+    </div>
+  </details>
+
+  <details class="filter" id="filter-areas-of-research">
+    <summary>Filter by Areas of Research</summary>
+    <div class="filter-options">
+      <label><input type="checkbox"> Sustainability</label>
+      <label><input type="checkbox"> Data Science</label>
+      <label><input type="checkbox"> Health & Wellness</label>
+      <label><input type="checkbox"> Robotics</label>
+      <label><input type="checkbox"> Environmental Science</label>
+    </div>
+  </details>
+
+  <details class="filter" id="filter-positions">
+    <summary>Filter by Positions</summary>
+    <div class="filter-options">
+      <label><input type="checkbox"> Undergraduate Research</label>
+      <label><input type="checkbox"> Lab Manager</label>
+      <label><input type="checkbox"> Analyst</label>
+      <label><input type="checkbox"> Sound Designer</label>
+    </div>
+  </details>
+
+  <details class="filter" id="filter-lab-type">
+    <summary>Filter by Type</summary>
+    <div class="filter-options">
+      <label><input type="checkbox"> Research Labs</label>
+      <label><input type="checkbox"> Student Projects</label>
+      <label><input type="checkbox"> Clinical Experience</label>
+      <label><input type="checkbox"> Engineering Lab</label>
+      <label><input type="checkbox"> Creativity</label>
+    </div>
+  </details>
+</div>
+
+<!-- Results Header -->
+<div class="results-header">
+  <div class="count">0</div>
+  <h2>Results Found</h2>
+</div>
+
+<!-- Results Grid -->
+<div class="results-container" id="results-grid">
+  <!-- RESULTS START -->
+  <!-- Populated dynamically -->
+  <!-- RESULTS END -->
+</div>
+
+<!-- Pagination -->
+<div class="pagination" id="pagination"></div>
+
+<!-- Scripts -->
+<script>
+  async function fetchAndDisplayLabs() {
+    try {
+      const response = await fetch('labs.json');
+      const labs = await response.json();
+
+      const resultsGrid = document.getElementById('results-grid');
+      const filters = document.querySelectorAll('.filter-options input[type="checkbox"]');
+
+      function displayFilteredLabs() {
+        const selectedTags = Array.from(filters)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.nextSibling.textContent.trim());
+
+        const filteredLabs = labs.filter(lab =>
+          selectedTags.every(tag => lab.tags.includes(tag))
+        );
+
+        resultsGrid.innerHTML = '';
+        filteredLabs.forEach(lab => {
+          const card = document.createElement('div');
+          card.className = 'result-card';
+          card.innerHTML = `
+            <img src="${lab.image}" alt="${lab.title}">
+            <h3>${lab.title}</h3>
+            <p>${lab.description}</p>
+            <p class="location"><strong>Location:</strong> ${lab.location}</p>
+            <p class="professor"><strong>Professor:</strong> ${lab.professor}</p>
+            <div class="tags">
+              ${lab.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+            <a href="${lab.link}" target="_blank" style="color: #003366; font-weight: bold; text-decoration: underline;">Learn More</a>
+          `;
+          resultsGrid.appendChild(card);
+        });
+
+        document.querySelector('.results-header .count').textContent = filteredLabs.length;
+      }
+
+      filters.forEach(filter => filter.addEventListener('change', displayFilteredLabs));
+      displayFilteredLabs(); // Initial display
+    } catch (error) {
+      console.error('Error fetching lab data:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', fetchAndDisplayLabs);
+</script>
+</body>
+</html>

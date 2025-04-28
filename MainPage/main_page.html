@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Header with Smooth Fade and Two Large Square Boxes</title>
+  <title>Header with Smooth Fade and Three Large Square Boxes</title>
   <style>
     body {
       margin: 0;
@@ -14,8 +14,9 @@
 
     /* HEADER SECTION */
     .header {
-      height: 900px;
-      background: url('IMG_1580.jpg') center/cover no-repeat;
+      height: 1200px;
+      background: url('IMG_1580.jpg') center center no-repeat;
+      background-size: cover;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -37,50 +38,62 @@
       z-index: 0;
     }
 
-    .logo-box {
+    /* New top-bar container */
+    .top-bar {
       position: absolute;
       top: 0;
       left: 0;
-      background: #fff;
-      padding: 0 32px;
-      display: flex;
-      align-items: center;
-      z-index: 2;
       width: 100%;
-      height: 100px;
-      box-sizing: border-box;
-    }
-
-    .school-logo {
-      height: 90px;
-      width: auto;
-      display: block;
-    }
-
-    /* MENU BOX STYLES */
-    .menu-box {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100px;
-      width: 420px;
+      height: 50px;
       display: flex;
       z-index: 3;
-      background: #111;
       box-sizing: border-box;
+      background-color: #ba0c2f;
     }
 
-    .menu-link {
-      flex: 1 1 0;
+    /* Adjust logo-box */
+    .logo-box {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      padding: 0 20px;
+      background: #f8f6f6;
+    }
+
+    /* School logo */
+    .school-logo {
+      height: 30px;
+      width: auto;
+    }
+
+    /* Menu box that will hold menu items */
+    .menu-box {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-evenly;
+      /* Distribute menu items evenly */
+      align-items: center;
+    }
+
+    /* Each menu link */
+    .menu-link {
       text-decoration: none;
+      color: #fff;
       font-size: 1.3rem;
+      display: block;
+      text-align: center;
+      padding: 12px 24px;
+      width: 100%;
       height: 100%;
-      border-left: 1px solid #222;
-      border-right: 1px solid #222;
+      /* Make links fill the entire height of the bar */
+      transition: background 0.3s;
+      box-sizing: border-box;
+    }
+
+    .menu-link:hover,
+    .menu-link:focus {
+      background-color: #444;
+      color: #fff;
     }
 
     .menu-link:first-child {
@@ -112,18 +125,41 @@
       align-items: center;
     }
 
+    /* TITLE BLOCK STYLES */
     .header-title {
-      font-size: 6rem;
+      font-size: 3.5rem;
       font-weight: bold;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
       margin: 0 0 18px 0;
       line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      text-overflow: ellipsis;
+      /* Ensure text doesn't overflow */
     }
 
+    .header-title span {
+      display: inline-block;
+      animation: moveBanner 8s linear infinite;
+    }
+
+    @keyframes moveBanner {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+
     .header-subtitle {
-      font-size: 2.3rem;
-      font-style: italic;
-      color: #ffd700;
+      font-size: 1.8rem;
+      font-style: san-serif;
+      color: #b4a470;
       margin-bottom: 18px;
       margin-top: -5px;
       font-weight: 600;
@@ -140,6 +176,21 @@
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     }
 
+    /* Target the <p> element inside the title-block */
+    .title-block p {
+      font-family: 'Arial', sans-serif;
+      /* Replace with your desired font */
+      font-size: 1.3rem;
+      /* Adjust font size as needed */
+      line-height: 1.6;
+      /* Adjust line height for better readability */
+      color: #ffffff;
+      /* You can also change the text color */
+      font-weight: normal;
+      /* Set font weight */
+    }
+
+
     /* FADE TO BLACK SECTION */
     .fade-to-black {
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
@@ -149,11 +200,11 @@
       padding: 0;
     }
 
-    /* BLACK SECTION WITH TWO SQUARE BOXES */
+    /* BLACK SECTION WITH THREE SQUARE BOXES */
     .black-section {
       background: #000;
       color: #fff;
-      min-height: 1100px;
+      min-height: 900px;
       width: 100%;
       display: flex;
       align-items: flex-start;
@@ -163,10 +214,10 @@
       margin: 0;
     }
 
-    .two-boxes {
+    .three-boxes {
       display: flex;
       width: 100%;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       gap: 48px;
       justify-content: center;
@@ -177,39 +228,65 @@
     .info-box {
       background: #181818;
       border-radius: 0;
-      /* No rounded corners */
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       flex: 1 1 0;
       aspect-ratio: 1 / 1;
-      max-width: 500px;
-      /* Make the box bigger by increasing this */
-      min-width: 250px;
+      min-width: 0;
       width: 100%;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 32px;
-      /* No animation or transition */
+      justify-content: flex-start;
+      padding: 32px 16px 24px 16px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      /* Added smooth transitions */
+    }
+
+    .info-box:hover {
+      transform: scale(1.05);
+      /* Slightly enlarge the box */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      /* Deeper shadow for hover effect */
+      background-color: #333;
+      /* Darker background on hover */
+    }
+
+    .research-photo {
+      width: 100%;
+      max-width: 400px;
+      height: 400px;
+      display: block;
+      margin: 0 auto 18px auto;
+      object-fit: cover;
+      object-position: center;
+      background: #222;
     }
 
     .info-box h3 {
       margin-top: 0;
       margin-bottom: 16px;
       font-size: 2rem;
-      color: #ffd700;
+      color: #b4a470;
       letter-spacing: 1px;
     }
 
     .info-box p {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       line-height: 1.6;
       color: #eee;
     }
 
     /* Responsive for mobile */
+    @media (max-width: 1200px) {
+      .three-boxes {
+        max-width: 1000px;
+        gap: 24px;
+      }
+    }
+
     @media (max-width: 900px) {
       .header-title {
         font-size: 3.2rem;
@@ -242,7 +319,7 @@
         padding: 0;
       }
 
-      .two-boxes {
+      .three-boxes {
         flex-direction: column;
         gap: 24px;
         max-width: 400px;
@@ -252,7 +329,11 @@
         max-width: 100%;
         min-width: 0;
         aspect-ratio: 1/1;
-        padding: 28px 14px;
+        padding: 28px 10px;
+      }
+
+      .research-photo {
+        max-width: 180px;
       }
     }
 
@@ -278,29 +359,190 @@
         margin-top: 70px;
       }
     }
+
+    /* Extra box styles */
+    .extra-section {
+      width: 100%;
+      background: #ba0c2f;
+      padding: 100px 0;
+      padding-bottom: 100px;
+      /* Increased padding */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .extra-box {
+      display: flex;
+      align-items: flex-start;
+      background: #181818;
+      color: #fff;
+      padding: 48px 36px;
+      padding-bottom: 40px;
+      /* Increased padding */
+      max-width: 1400px;
+      /* Increased max-width */
+      border-radius: 16px;
+      /* Increased border-radius */
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+      /* Adjusted box-shadow */
+      gap: 48px;
+      /* Increased gap */
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .extra-image {
+      width: 600px;
+      /* Increased width */
+      height: 500px;
+      /* Increased height */
+      object-fit: cover;
+      border-radius: 12px;
+      /* Increased border-radius */
+      background: #222;
+      flex-shrink: 0;
+    }
+
+    .extra-content {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .extra-title {
+      font-size: 2.5rem;
+      /* Increased font-size */
+      color: #b4a470;
+      margin: 0 0 16px 0;
+      /* Increased margin-bottom */
+    }
+
+    .extra-author {
+      font-size: 1.3rem;
+      /* Increased font-size */
+      color: #bbb;
+      margin-bottom: 24px;
+      /* Increased margin-bottom */
+      font-style: italic;
+    }
+
+    .first-paragraph {
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 0px;
+      /* Adds space below the first paragraph */
+      padding-bottom: 15px;
+    }
+
+    .second-paragraph {
+      font-size: 20px;
+      color: #fffefe;
+      margin-top: 0px;
+      /* Adds space above the second paragraph */
+      padding-top: 0px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .extra-box {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 16px;
+        /* Adjusted padding */
+        gap: 24px;
+        /* Adjusted gap */
+      }
+
+      .extra-image {
+        width: 100%;
+        max-width: 400px;
+        /* Increased max-width */
+        height: auto;
+      }
+
+      .extra-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+
+    .box {
+      flex: 1;
+      text-align: center;
+      padding: 5px 0px;
+      color: white;
+      background-color: black;
+      transition: background-color 0.3s, transform 0.3s;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      border: 1px solid black;
+    }
+
+    .box:hover {
+      background-color: #333333;
+      transform: translateY(-5px);
+    }
+
+    .box h1,
+    h2,
+    h3 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .box a {
+      display: inline-block;
+      margin-top: 0px;
+      color: rgb(255, 255, 255);
+      text-decoration: underline;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .box a:hover {
+      color: #00bcd4;
+      /* Light blue when hovering link */
+    }
   </style>
 </head>
 
 <body>
   <div class="header">
     <!-- Logo in a full-width white rectangle box -->
-    <div class="logo-box">
-      <img src="Denver.png" alt="School Logo" class="school-logo" />
+    <div class="top-bar">
+      <div class="logo-box">
+        <img src="Denver.png" class="school-logo" alt="School Logo" />
+      </div>
+      <div class="menu-box">
+        <a href="#" class="menu-link">Conduct Research</a>
+        <a href="#" class="menu-link">Programs</a>
+        <a href="#" class="menu-link">Faculty</a>
+        <a href="#" class="menu-link">Contact</a>
+      </div>
     </div>
-    <!-- Menu box in the top right corner, divided into three equal sections -->
-    <nav class="menu-box">
-      <a href="#home" class="menu-link">Home</a>
-      <a href="#about" class="menu-link">About</a>
-      <a href="#contact" class="menu-link">Contact</a>
+
+
     </nav>
     <!-- Centered title, subtitle, and description block -->
     <div class="title-block">
-      <h1 class="header-title">Innovative Research Space</h1>
+      <h1 class="header-title"><span>Innovative Research Space</span></h1>
       <div class="header-subtitle">“Where Curiosity Creates Change”</div>
-      <p class="header-desc">
-        At the University of Denver, we advance discovery, inspire innovation, and empower students and faculty to turn
-        ideas into real-world impact. As an R1 research institution, we are committed to shaping a better future through
-        bold, collaborative research.
+      <p>
+        At the University of Denver, we drive discovery, inspire innovation, and empower students and faculty to create
+        real-world impact through bold, collaborative research as an R1 institution.
       </p>
     </div>
   </div>
@@ -308,24 +550,66 @@
   <!-- Fade transition between header and black section -->
   <div class="fade-to-black"></div>
 
-  <!-- Black section with two large square boxes -->
+  <!-- Black section with three large square boxes and research photos -->
   <section class="black-section">
-    <div class="two-boxes">
+    <div class="three-boxes">
       <div class="info-box">
-        <h3>Box One</h3>
-        <p>Content for the first box goes here. You can add anything you like.</p>
+        <img src="CardiacLabC.jpg" alt="Research 1" class="research-photo">
+        <h3>Computational Biomechanics</h3>
+        <p>Computational models uses to evaluate orthopaedic implants, improving design and patient outcomes. The lab
+          focuses on joint mechanics and musculoskeletal systems to understand how implants affect human motion,
+          enhancing healthcare and treatments for musculoskeletal issues.
+        </p>
       </div>
       <div class="info-box">
-        <h3>Box Two</h3>
-        <p>Content for the second box goes here. Customize as needed.</p>
+        <img src="MSEngineer.avif" alt="Research 2" class="research-photo">
+        <h3>Probabilistic Mechanics</h3>
+        <p>Studies how variability in mechanical systems affects performance, using probabilistic analysis and Monte
+          Carlo simulations. This research improves understanding of joint mechanics and materials properties,
+          optimizing designs in orthopaedics and nanotechnology for safer, more reliable solutions.</p>
+      </div>
+      <div class="info-box">
+        <img src="orthopaedic.jpg" alt="Research 3" class="research-photo">
+        <h3>Orthopaedic Biomechanics </h3>
+        <p>Applies engineering principles to study joint mechanics, human motion, and implant testing. Using
+          experimental and computational methods, it develops innovative solutions to improve musculoskeletal health and
+          enhance implant design, advancing medical technologies for better patient outcomes.</p>
       </div>
     </div>
   </section>
 
-  <div class="main-content">
-    <p>Scroll down to see more content!</p>
-    <p style="margin-top: 1200px;">You've reached the bottom!</p>
-  </div>
+  <!-- New Section for Extra Box -->
+  <section class="extra-section">
+    <div class="extra-box">
+      <img src="HumanRobot.jpeg" alt="Extra Image" class="extra-image">
+      <div class="extra-content">
+        <h3 class="extra-title">Engineering Innovation: Robots Providing Social Support
+        </h3>
+        <div class="extra-author">Writer: Kevin Douglas (BA 2020)
+        </div>
+        <p class="first-paragraph">
+          Dream Face Technologies, founded by Dr. Mohammad H. Mahoor and led alongside principal engineer Josh Lane,
+          focuses on developing social robots to support individuals with autism, depression, Alzheimer’s, and dementia.
+          Their social robot, Ryan, is designed to improve users’ quality of life by providing companionship, medication
+          reminders, conversation, mood recognition, and cognitive stimulation through games and reminiscence
+          activities. Beginning with early prototypes like the "eBear," the team has advanced Ryan through multiple
+          iterations, incorporating extensive research and user feedback to create a versatile, supportive tool for
+          senior care environments.
+
+        </p>
+        <p class="second-paragraph">
+          The University of Denver has provided significant support to Dream Face Technologies through access to
+          engineering facilities, resources, and a strong pool of student and alumni talent.The university’s commitment
+          to fostering innovation and entrepreneurship has played a critical role in the company's growth and success.
+          Dream Face Technologies remains closely connected to the DU community, with approximately 80% of its team
+          composed of DU students and graduates.
+        </p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
 </body>
 
 </html>
